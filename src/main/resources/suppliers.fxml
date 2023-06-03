@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane style="-fx-padding: 20; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erp.controllers.SuplliersController">
+   <children>
+      <HBox style="-fx-alignment: center;">
+         <children>
+            <VBox alignment="CENTER" style="-fx-alignment: center;">
+               <children>
+                  <Label prefHeight="56.0" prefWidth="185.0" text="Suppliers">
+                     <font>
+                        <Font size="39.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="209.0" prefWidth="1003.0" style="-fx-border-color: #c1c1c1; -fx-border-radius: 6px;">
+                     <children>
+                        <TextField fx:id="text_name" layoutX="24.0" layoutY="57.0" promptText="name" />
+                        <Label layoutX="24.0" layoutY="29.0" prefHeight="25.0" prefWidth="62.0" styleClass="text_feild_lable" stylesheets="@css/style.css" text="name" />
+                        <TextField fx:id="text_phone" layoutX="233.0" layoutY="55.0" promptText="phone" />
+                        <Label layoutX="233.0" layoutY="27.0" prefHeight="25.0" prefWidth="62.0" styleClass="text_feild_lable" stylesheets="@css/style.css" text="phone" />
+                        <TextField fx:id="text_debit" layoutX="425.0" layoutY="55.0" promptText="phone" />
+                        <Label layoutX="425.0" layoutY="27.0" prefHeight="25.0" prefWidth="113.0" styleClass="text_feild_lable" stylesheets="@css/style.css" text="debit status" />
+                        <Button layoutX="739.0" layoutY="158.0" mnemonicParsing="false" onAction="#insert" prefHeight="30.0" prefWidth="113.0" stylesheets="@css/bootstrapfx.css" text="add">
+                           <styleClass>
+                              <String fx:value="btn-success" />
+                              <String fx:value="btn" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="876.0" layoutY="158.0" mnemonicParsing="false" onAction="#update" prefHeight="30.0" prefWidth="113.0" stylesheets="@css/bootstrapfx.css" text="update">
+                           <styleClass>
+                              <String fx:value="btn-primary" />
+                              <String fx:value="btn" />
+                           </styleClass>
+                        </Button>
+                        <TextField fx:id="text_id" editable="false" layoutX="956.0" layoutY="14.0" prefHeight="25.0" prefWidth="33.0" promptText="id" />
+                        <TextField fx:id="text_address" layoutX="629.0" layoutY="54.0" promptText="address" />
+                        <Label layoutX="629.0" layoutY="26.0" prefHeight="25.0" prefWidth="113.0" styleClass="text_feild_lable" stylesheets="@css/style.css" text="address" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="60.0" prefWidth="1003.0">
+                     <children>
+                        <TextField fx:id="text_search" layoutY="16.0" onKeyReleased="#search" prefHeight="25.0" prefWidth="149.0" promptText="search supplier" />
+                     </children>
+                  </Pane>
+                  <TableView fx:id="tableViewSuppliers" onMouseClicked="#getSelectedRow" prefHeight="389.0" prefWidth="1003.0">
+                     <columns>
+                        <TableColumn fx:id="col_id" prefWidth="73.0" text="id" />
+                        <TableColumn fx:id="col_name" prefWidth="223.0" text="name" />
+                        <TableColumn fx:id="col_phone" prefWidth="223.0" text="phone" />
+                        <TableColumn fx:id="col_debit_status" minWidth="0.0" prefWidth="247.0" text="debit status" />
+                        <TableColumn fx:id="col_address" maxWidth="347.0" prefWidth="212.0" text="address" />
+                     </columns>
+                  </TableView>
+                  <Pane prefHeight="88.0" prefWidth="1003.0">
+                     <children>
+                        <Button layoutX="890.0" layoutY="8.0" mnemonicParsing="false" onAction="#delete" prefHeight="30.0" prefWidth="113.0" stylesheets="@css/bootstrapfx.css" text="delete ">
+                           <styleClass>
+                              <String fx:value="btn-danger" />
+                              <String fx:value="btn" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</StackPane>

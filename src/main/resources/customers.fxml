@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="658.0" styleClass="background_gradient_new_invoice" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erp.controllers.CustomersController">
+   <children>
+      <Label layoutX="234.0" prefHeight="56.0" prefWidth="185.0" text="customers" textFill="WHITE">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Pane layoutX="18.0" layoutY="56.0" prefHeight="209.0" prefWidth="616.0" style="-fx-border-color: #c1c1c1; -fx-border-radius: 6px;">
+         <children>
+            <TextField fx:id="text_name" layoutX="24.0" layoutY="57.0" promptText="name" />
+            <Label layoutX="24.0" layoutY="29.0" prefHeight="25.0" prefWidth="62.0" styleClass="text_feild_lable" stylesheets="@css/style.css" text="name" textFill="WHITE" />
+            <TextField fx:id="text_phone" layoutX="186.0" layoutY="56.0" promptText="phone" />
+            <Label layoutX="186.0" layoutY="28.0" prefHeight="25.0" prefWidth="62.0" styleClass="text_feild_lable" stylesheets="@css/style.css" text="phone" textFill="WHITE" />
+            <TextField fx:id="text_debit" layoutX="353.0" layoutY="56.0" promptText="phone" />
+            <Label layoutX="353.0" layoutY="28.0" prefHeight="25.0" prefWidth="113.0" styleClass="text_feild_lable" stylesheets="@css/style.css" text="debit status" textFill="WHITE" />
+            <Button layoutX="24.0" layoutY="158.0" mnemonicParsing="false" onAction="#insert" prefHeight="30.0" prefWidth="113.0" stylesheets="@css/bootstrapfx.css" text="add">
+               <styleClass>
+                  <String fx:value="btn-success" />
+                  <String fx:value="btn" />
+               </styleClass>
+            </Button>
+            <Button layoutX="161.0" layoutY="158.0" mnemonicParsing="false" onAction="#update" prefHeight="30.0" prefWidth="113.0" stylesheets="@css/bootstrapfx.css" text="update">
+               <styleClass>
+                  <String fx:value="btn-primary" />
+                  <String fx:value="btn" />
+               </styleClass>
+            </Button>
+            <TextField fx:id="text_id" editable="false" layoutX="514.0" layoutY="56.0" prefHeight="25.0" prefWidth="33.0" promptText="id" />
+         </children>
+      </Pane>
+      <TableView fx:id="tableViewCustomer" layoutX="20.0" layoutY="325.0" onMouseClicked="#getSelectedRow" prefHeight="287.0" prefWidth="616.0">
+         <columns>
+            <TableColumn fx:id="col_id" prefWidth="68.0" text="id" />
+            <TableColumn fx:id="col_name" prefWidth="135.0" text="name" />
+            <TableColumn fx:id="col_phone" prefWidth="113.0" text="phone" />
+            <TableColumn fx:id="col_debit_status" prefWidth="173.0" text="debit status" />
+         </columns>
+      </TableView>
+      <TextField fx:id="text_search" layoutX="20.0" layoutY="282.0" onKeyReleased="#search" prefHeight="25.0" prefWidth="149.0" promptText="search customer" />
+      <Button layoutX="523.0" layoutY="646.0" mnemonicParsing="false" onAction="#delete" prefHeight="30.0" prefWidth="113.0" stylesheets="@css/bootstrapfx.css" text="delete ">
+         <styleClass>
+            <String fx:value="btn-danger" />
+            <String fx:value="btn" />
+         </styleClass>
+      </Button>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="2.0" right="20.0" top="20.0" />
+   </padding>
+</AnchorPane>

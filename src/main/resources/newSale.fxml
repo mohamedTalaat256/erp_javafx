@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="807.0" prefWidth="581.0" styleClass="background_gradient_new_invoice" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.erp.controllers.NewSalesController">
+   <children>
+      <AnchorPane layoutX="11.0" layoutY="79.0" prefHeight="236.0" prefWidth="570.0" AnchorPane.bottomAnchor="492.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="277.0" AnchorPane.topAnchor="79.0">
+         <children>
+            <ComboBox fx:id="combo_category" layoutX="14.0" layoutY="143.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+            <Label layoutX="14.0" layoutY="116.0" prefHeight="17.0" prefWidth="150.0" styleClass="text_feild_lable_light" stylesheets="@css/style.css" text="Categories" textFill="WHITE" />
+            <ComboBox fx:id="combo_product" layoutX="186.0" layoutY="143.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+            <Label layoutX="186.0" layoutY="116.0" prefHeight="17.0" prefWidth="150.0" styleClass="text_feild_lable_light" stylesheets="@css/style.css" text="Products" textFill="WHITE" />
+            <Button layoutX="452.0" layoutY="186.0" mnemonicParsing="false" onAction="#addItemToInvoice" prefHeight="25.0" prefWidth="80.0" stylesheets="@css/bootstrapfx.css" text="Add">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-primary" />
+               </styleClass>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextField fx:id="text_price" layoutX="452.0" layoutY="143.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #ffffff;" />
+            <Label layoutX="452.0" layoutY="116.0" prefHeight="20.0" prefWidth="80.0" styleClass="text_feild_lable_light" stylesheets="@css/style.css" text="price" textFill="WHITE" />
+            <ComboBox fx:id="combo_customer" layoutX="186.0" layoutY="43.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+            <Label layoutX="186.0" layoutY="15.0" prefHeight="17.0" prefWidth="150.0" styleClass="text_feild_lable_light" stylesheets="@css/style.css" text="Customer" textFill="WHITE" />
+            <DatePicker fx:id="date_picker" layoutX="358.0" layoutY="43.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" />
+            <Label layoutX="358.0" layoutY="15.0" prefHeight="17.0" prefWidth="150.0" styleClass="text_feild_lable_light" stylesheets="@css/style.css" text="Date" textFill="WHITE" />
+            <TextField fx:id="text_qti" layoutX="358.0" layoutY="144.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #ffffff;" />
+            <Label layoutX="358.0" layoutY="116.0" prefHeight="20.0" prefWidth="80.0" styleClass="text_feild_lable_light" stylesheets="@css/style.css" text="qti" textFill="WHITE" />
+            <TextField fx:id="text_invoice_id" editable="false" layoutX="15.0" layoutY="41.0" prefHeight="25.0" prefWidth="150.0" />
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="20.0" prefWidth="150.0" styleClass="text_feild_lable_light" stylesheets="@css/style.css" text="invoice id" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableViewSalesInvoiceDetails" layoutX="9.0" layoutY="364.0" prefHeight="301.0" prefWidth="553.0" AnchorPane.bottomAnchor="142.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="364.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="39.0" text="#" />
+            <TableColumn fx:id="col_sales_invoice_id" prefWidth="56.0" text="inv_id" />
+          <TableColumn fx:id="col_item" minWidth="8.0" prefWidth="143.0" text="item" />
+            <TableColumn fx:id="col_price" prefWidth="87.0" text="price" />
+            <TableColumn fx:id="col_qti" minWidth="0.0" prefWidth="101.0" text="qti" />
+            <TableColumn fx:id="col_total" prefWidth="107.0" text="total" />
+        </columns>
+         <stylesheets>
+            <URL value="@css/style.css" />
+            <URL value="@css/bootstrapfx.css" />
+         </stylesheets>
+      </TableView>
+      <Pane layoutX="-3.0" layoutY="682.0" prefHeight="111.0" prefWidth="570.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <children>
+            <TextField fx:id="text_paid" layoutX="39.0" layoutY="71.0" prefHeight="25.0" prefWidth="80.0" />
+            <Label layoutX="39.0" layoutY="45.0" prefHeight="20.0" prefWidth="56.0" styleClass="text_feild_lable_light" stylesheets="@css/style.css" text="paid" textFill="WHITE" />
+            <TextField fx:id="text_remain" layoutX="189.0" layoutY="72.0" prefHeight="25.0" prefWidth="62.0" />
+            <Label layoutX="189.0" layoutY="46.0" prefHeight="20.0" prefWidth="56.0" styleClass="text_feild_lable_light" stylesheets="@css/style.css" text="remain" textFill="WHITE" />
+            <Label layoutX="39.0" layoutY="14.0" prefHeight="20.0" prefWidth="56.0" styleClass="text_feild_lable_light" stylesheets="@css/style.css" text="TOTAL" textFill="WHITE" />
+            <Label fx:id="label_total" layoutX="189.0" layoutY="14.0" prefHeight="20.0" prefWidth="56.0" styleClass="text_feild_lable_light" stylesheets="@css/style.css" text="0.0" textFill="WHITE" />
+            <Button fx:id="btn_save" layoutX="375.0" layoutY="69.0" mnemonicParsing="false" onAction="#saveInvoice" prefHeight="30.0" prefWidth="80.0" stylesheets="@css/bootstrapfx.css" text="save">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-warning" />
+               </styleClass>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btn_print" layoutX="470.0" layoutY="69.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" stylesheets="@css/bootstrapfx.css" text="Print">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-success" />
+               </styleClass>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children></Pane>
+      <Label layoutX="21.0" layoutY="31.0" prefHeight="35.0" prefWidth="150.0" text="New Sale" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

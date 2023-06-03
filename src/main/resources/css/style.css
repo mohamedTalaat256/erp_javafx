@@ -1,0 +1,30 @@
+
+
+
+
+.dashboard_btn{
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-color: #262626;
+}
+
+.text_feild_lable{
+ -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-color: #262626;
+}
+
+.text_feild_lable_light{
+ -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-color: #111111;
+}
+
+.background_gradient{
+    -fx-background-color: linear-gradient(to bottom right, #07024a, #1c12a1);
+}
+.background_gradient_new_invoice{
+    -fx-background-color: linear-gradient(to bottom right, #ff896b, #1c12a1);
+}
+
